@@ -19,9 +19,13 @@ build:
     - echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
   script:
     - echo "🚀 Start building Docker image"
+    # ✅ Create .env file with DB credentials from GitLab CI variables
     - echo "Creating .env file"
     - |
       cat <<EOF > .env
+      DATABASE_URL=$DATABASE_URL
+      DB_USERNAME=$DB_USERNAME
+      DB_PASSWORD=$DB_PASSWORD
       EOF
 
     # ---- Build & Push to Docker Hub For Microservices Java repository ----
