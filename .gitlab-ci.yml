@@ -31,5 +31,5 @@ build:
     # ---- Build & Push to Docker Hub For Microservices Java repository ----
     - docker build -t $DOCKERHUB_USERNAME/creativelabback-userman:${CI_COMMIT_SHA:0:8} .
     - docker push $DOCKERHUB_USERNAME/creativelabback-userman:${CI_COMMIT_SHA:0:8}
-    - docker tag $DOCKERHUB_USERNAME/creativelabback-userman:${CI_COMMIT_SHA:0:8} $DOCKERHUB_USERNAME/creativelabbackend-userman:latest
+    - docker tag $DOCKERHUB_USERNAME/creativelabback-userman:${CI_COMMIT_SHA:0:8} $DOCKERHUB_USERNAME/creativelabback-userman:latest
     - docker push $DOCKERHUB_USERNAME/creativelabback-userman:latest
